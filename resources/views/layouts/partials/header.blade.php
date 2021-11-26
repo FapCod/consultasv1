@@ -8,7 +8,7 @@
     </div>
     <div>
       <a href="{{ route('home') }}" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Home</a>
-      <a href="{{ route('home') }}" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Sobre me</a>
+      <a href="{{ route('home') }}" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Sobre mi</a>
       <a href="#footer" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">Comunicate</a>
     </div>
   </nav>
