@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>{{ config('app.name', 'Consulta Peru') }}</title>
+    <link rel="shortcut icon" href="{{ asset('Logo.ico') }}" type="image/x-icon">
     {{-- entradas de plantilla --}}
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <!--Regular Datatables CSS-->

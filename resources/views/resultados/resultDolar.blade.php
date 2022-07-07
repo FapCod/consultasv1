@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="md:px-32 py-8 w-full ">
-        <a href="{{ route('ruc') }}" title="consultar"
+        <a href="{{ route('dolar') }}" title="consultar"
             class="md:w-32  tracking-wide  font-bold rounded border-2 border-blue-500  bg-blue-500 text-white shadow-md py-2 px-6 inline-flex items-center mb-4 text-center">
             <span class="mx-auto">Hacer otra consulta</span>
         </a>
@@ -8,19 +8,15 @@
             <table class="min-w-full bg-white">
                 <thead class="bg-gray-800 text-white">
                     <tr>
-                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Numero RUC consultado
+                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha consulta
                         </th>
-                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Direccion
+                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Fecha Sunat
                         </th>
-                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Direccion Completa</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">nombre o razon social</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">estado</td>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">condicion</td>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">departamento</td>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Provincia</td>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Distrito</td>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ubigeo SUNAT</td>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Es agente de retencion?</td>
+                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Venta
+                        </th>
+                        <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Compra
+                        </th>
+                       
                     </tr>
                 </thead>
                 <tbody class="text-gray-700">
@@ -28,19 +24,15 @@
                         @if (empty($datos))
                         @else
                         @if($datos['success'])
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->ruc }}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->direccion }}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->direccion_completa }}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->nombre_o_razon_social}}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->estado }}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->condicion}}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->departamento}}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->provincia }}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->distrito }}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->ubigeo_sunat }}</td>
-                            <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->es_agente_de_retencion }}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->fecha_busqueda }}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->fecha_sunat }}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->venta }}</td>
+                        <td class="w-1/3 text-left py-3 px-4">{{ $datos['data']->compra }}</td>
                         @else
-                        <td class="w-full text-left py-3 px-4">NO HAY DATOS, INTENTA DE NUEVO TAL VEZ CON OTRO RUC. O TAMBIEN PUEDE SER MIS PETICIONES QUE YA SUPERO EL LIMITE Y NO HE COMPRADO LA API 😢</td>
+                        <td class="w-full text-left py-3 px-4">NO HAY DATOS, INTENTA DE NUEVO. TAL VEZ CON OTRA FECHA ACTUAL O ANTERIOR PERO NO FUTURA.
+                            O TAMBIEN PUEDE SER MIS PETICIONES QUE YA SUPERO EL LIMITE Y NO HE COMPRADO LA API 😢
+                        </td>
+                       
                         @endif
                         @endif
 
